@@ -1,0 +1,19 @@
+---
+logging:
+  level:
+    root: WARN
+
+user:
+  fullName: Anton Volkov
+  age: 25
+
+spring:
+  jpa:
+    generate-ddl: true
+    show-sql: true
+  output:
+    ansi:
+      enabled: always
+
+server:
+  address: 0.0.0.0

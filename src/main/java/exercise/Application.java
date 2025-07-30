@@ -1,8 +1,11 @@
 package exercise;
 
 import exercise.annotation.LogExecutionTime;
+import exercise.component.DefaultUserProperties;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
 import java.lang.reflect.Method;
 
@@ -10,9 +13,9 @@ import java.lang.reflect.Method;
 public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        ApplicationContext context =SpringApplication.run(Application.class, args);
 
-        SomeService service = new SomeService();
+        SomeService service =context.getBean(SomeService.class);
 
         for (Method method : SomeService.class.getDeclaredMethods()) {
 
